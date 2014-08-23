@@ -621,8 +621,8 @@ void main()\n\
 	imageStore(image1, ivec2(0,0), vec4(newLum,newLum,newLum,newLum));\n\
 }";
 
-#define PROGRAM_PARAMETER(nameString) vtx_##nameString, frg_##nameString, atb_##nameString, sizeof(atb_##nameString)/4, uni_##nameString,  sizeof(uni_##nameString)/4,spl_##nameString,sizeof(spl_##nameString)/4
-#define LOC_PARAMETER(nameString) atb_##nameString, sizeof(atb_##nameString)/4, uni_##nameString,  sizeof(uni_##nameString)/4,spl_##nameString,sizeof(spl_##nameString)/4
+#define PROGRAM_PARAMETER(nameString) vtx_##nameString, frg_##nameString, atb_##nameString, sizeof(atb_##nameString)/sizeof(char *), uni_##nameString,  sizeof(uni_##nameString)/sizeof(char *),spl_##nameString,sizeof(spl_##nameString)/sizeof(char *)
+#define LOC_PARAMETER(nameString) atb_##nameString, sizeof(atb_##nameString)/sizeof(char *), uni_##nameString,  sizeof(uni_##nameString)/sizeof(char *),spl_##nameString,sizeof(spl_##nameString)/sizeof(char *)
 
 #endif  // SHADER_DECLARATION_H_
 
